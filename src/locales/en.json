@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Nguyen Huu Hung",
+    "available": "Available for work",
+    "roles": [
+      "Full Stack Developer",
+      "UI/UX Enthusiast",
+      "Problem Solver"
+    ],
+    "iam": "I am a",
+    "quote1": "The past is truth but the future is uncertain",
+    "quote2": "Being hurt many times makes me feel no more pain",
+    "viewProjects": "View Projects",
+    "contact": "Contact",
+    "reactExpert": "React Expert",
+    "cleanCode": "Clean Code"
+  },
+  "about": {
+    "title": "About Me",
+    "whoAmI": "Who am I?",
+    "description": "I am a young and enthusiastic developer. For me, code is not just lifeless lines, but a tool to solve real-world problems.",
+    "yearsExp": "Years of Experience",
+    "projectsDone": "Projects Completed",
+    "skills": "Skills"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Passionate products I have created",
+    "code": "Code",
+    "demo": "Demo"
+  },
+  "contact": {
+    "title": "Let's work together!",
+    "description": "I am always ready for new challenges. Leave a message and I will respond as soon as possible.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Content...",
+    "success": "Message sent successfully!",
+    "error": "Sending failed!",
+    "sending": "Sending...",
+    "sendButton": "Send Message"
+  },
+  "footer": {
+    "made_with": "Made with",
+    "by": "by Duc",
+    "description": "Building the best web experiences with modern technology and creative thinking.",
+    "navigation": "Navigation",
+    "connect": "Connect"
+  },
+  "notes": {
+    "title": "Quick Notes",
+    "new": "New",
+    "placeholder": "Write your notes here...",
+    "save": "Save",
+    "saved": "Auto-saved"
+  },
+  "updating": "Updating..."
+}

@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Custom Dark Mode Scrollbar --- */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f1f5f9; /* slate-100 */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #475569; /* slate-600 */
+  border-radius: 6px;
+  border: 3px solid #f1f5f9; /* slate-100 */
+}
+
+.dark::-webkit-scrollbar {
+  background-color: #0f172a; /* slate-900 */
+}
+
+.dark::-webkit-scrollbar-thumb {
+  background-color: #334155; /* slate-700 */
+  border-color: #0f172a; /* slate-900 */
+}
+
+
+/* --- Custom Animations --- */
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+/* Hiệu ứng Blob trôi nổi nền */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+/* Hiệu ứng chữ chạy Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+/* Hiệu ứng trôi nhẹ (Float) cho icon */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Hiệu ứng Fade In cơ bản */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Hiệu ứng Pulse nhẹ cho badge */
+@keyframes bounce-slow {
+
+  0%,
+  100% {
+    transform: translateY(-5%);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce 3s infinite;
+}

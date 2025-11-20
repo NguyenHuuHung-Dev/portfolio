@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "projects": "Dự án",
+    "news": "Tin tức",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "greeting": "Xin chào, tôi là",
+    "name": "Nguyễn Hữu Hưng",
+    "available": "Sẵn sàng làm việc",
+    "roles": [
+      "Full Stack Developer",
+      "UI/UX Enthusiast",
+      "Problem Solver"
+    ],
+    "iam": "Tôi là một",
+    "quote1": "Quá khứ là sự thật nhưng tương lai thì không chắc chắn",
+    "quote2": "Tổn thương nhiều lần khiến tôi không còn đau nữa",
+    "viewProjects": "Xem Dự Án",
+    "contact": "Liên Hệ",
+    "reactExpert": "Chuyên gia React",
+    "cleanCode": "Mã sạch"
+  },
+  "about": {
+    "title": "Về Bản Thân",
+    "whoAmI": "Tôi là ai?",
+    "description": "Tôi là một lập trình viên trẻ đầy nhiệt huyết. Đối với tôi, code không chỉ là những dòng chữ vô tri, mà là công cụ để giải quyết vấn đề thực tế.",
+    "yearsExp": "Năm kinh nghiệm",
+    "projectsDone": "Dự án hoàn thành",
+    "skills": "Kỹ năng"
+  },
+  "projects": {
+    "title": "Dự Án Tiêu Biểu",
+    "subtitle": "Những sản phẩm tâm huyết tôi đã thực hiện",
+    "code": "Mã nguồn",
+    "demo": "Demo"
+  },
+  "contact": {
+    "title": "Hãy cùng hợp tác!",
+    "description": "Tôi luôn sẵn sàng cho những thử thách mới. Hãy để lại lời nhắn và tôi sẽ phản hồi sớm nhất.",
+    "nameLabel": "Họ tên",
+    "namePlaceholder": "Nhập tên của bạn",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@example.com",
+    "messageLabel": "Lời nhắn",
+    "messagePlaceholder": "Nội dung...",
+    "success": "Gửi tin nhắn thành công!",
+    "error": "Gửi thất bại!",
+    "sending": "Đang gửi...",
+    "sendButton": "Gửi Tin Nhắn"
+  },
+  "footer": {
+    "made_with": "Làm với",
+    "by": "bởi Đức",
+    "description": "Xây dựng những trải nghiệm web tốt nhất với công nghệ hiện đại và tư duy sáng tạo.",
+    "navigation": "Điều hướng",
+    "connect": "Kết nối"
+  },
+  "notes": {
+    "title": "Ghi chú nhanh",
+    "new": "Mới",
+    "placeholder": "Viết ghi chú của bạn ở đây...",
+    "save": "Lưu",
+    "saved": "Đã lưu tự động"
+  },
+  "updating": "Đang cập nhật..."
+}
