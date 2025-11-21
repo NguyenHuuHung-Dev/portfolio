@@ -10,7 +10,7 @@ const Footer = ({ setActiveTab }) => {
             <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
                 <div>
                     <div className="flex items-center gap-2 mb-4 text-white">
-                        <div className="w-8 h-8 bg-emerald-600 rounded flex items-center justify-center font-bold">D</div>
+                        <div className="w-8 h-8 bg-emerald-600 rounded flex items-center justify-center font-bold">H</div>
                         <span className="font-bold text-xl">DevProfile</span>
                     </div>
                     <p className="text-sm text-slate-400 leading-relaxed">
