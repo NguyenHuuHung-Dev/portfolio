@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Code, Server, Database, Layout, Terminal, Globe } from 'lucide-react';
-import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext.jsx';
 
-// --- SỬA LỖI IMPORT ---
-// Thêm đuôi .jsx vào tất cả các file component để Vite nhận diện chính xác
 import Navigation from './components/Navigation.jsx';
-// Lưu ý: Dùng { HeroSection } nếu bên file kia là "export const". 
-// Nếu bên kia là "export default", hãy bỏ dấu ngoặc nhọn đi.
+// Import Named Export (phải có ngoặc nhọn nếu file HeroSection export const)
 import { HeroSection } from './components/HeroSection.jsx';
 import AboutSection from './components/AboutSection.jsx';
 import ProjectsSection from './components/ProjectsSection.jsx';
 import ContactSection from './components/ContactSection.jsx';
 import Footer from './components/Footer.jsx';
+import NewsSection from './components/NewsSection.jsx';
 
 // Component TechStackMarquee (Giữ nguyên)
 const TechStackMarquee = () => (
@@ -38,7 +36,6 @@ const AppContent = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [theme, setTheme] = useState('light');
 
-  // Đảm bảo useLanguage được gọi bên trong Provider (đã được bọc ở component App bên dưới)
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -62,13 +59,14 @@ const AppContent = () => {
             <TechStackMarquee />
             <ProjectsSection />
             <AboutSection />
+            <NewsSection />
             <ContactSection />
           </>
         );
       case 'about': return <AboutSection />;
       case 'projects': return <ProjectsSection />;
       case 'contact': return <ContactSection />;
-      case 'news': return <div className="py-32 text-center text-slate-500 dark:text-slate-400">{t('updating') || 'Updating...'}</div>;
+      case 'news': return <NewsSection />;
       default: return <HeroSection setActiveTab={setActiveTab} />;
     }
   };

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "date": "2024-03-20",
+    "category": "Technology",
+    "image": "https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=800&auto=format&fit=crop",
+    "title": {
+      "vi": "Tương lai của AI trong phát triển phần mềm",
+      "en": "The Future of AI in Software Development"
+    },
+    "summary": {
+      "vi": "Trí tuệ nhân tạo đang thay đổi cách chúng ta viết code như thế nào? Cùng khám phá các công cụ hỗ trợ lập trình mới nhất.",
+      "en": "How is Artificial Intelligence changing the way we write code? Let's explore the latest coding assistant tools."
+    }
+  },
+  {
+    "id": 2,
+    "date": "2024-02-15",
+    "category": "Personal",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+    "title": {
+      "vi": "Ra mắt Portfolio giao diện mới",
+      "en": "Launched New Portfolio Interface"
+    },
+    "summary": {
+      "vi": "Chính thức cập nhật giao diện với phong cách Neon Cyberpunk, tối ưu hóa trải nghiệm người dùng và hiệu năng.",
+      "en": "Officially updated the interface with Neon Cyberpunk style, optimizing user experience and performance."
+    }
+  },
+  {
+    "id": 3,
+    "date": "2024-01-10",
+    "category": "Tutorial",
+    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=800&auto=format&fit=crop",
+    "title": {
+      "vi": "Hướng dẫn tối ưu React Hook",
+      "en": "React Hook Optimization Guide"
+    },
+    "summary": {
+      "vi": "Tổng hợp các kỹ thuật sử dụng useMemo và useCallback hiệu quả để tránh render thừa trong ứng dụng lớn.",
+      "en": "A collection of techniques for effectively using useMemo and useCallback to avoid unnecessary renders in large apps."
+    }
+  }
+]
