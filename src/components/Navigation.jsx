@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Home, User, Briefcase, Newspaper, Mail, Menu, X, Sun, Moon, Globe, FileText } from 'lucide-react';
+import { Home, User, Briefcase, Newspaper, Mail, Menu, X, Sun, Moon, Globe, FileText, Search } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Navigation = ({ activeTab, setActiveTab, mobileMenuOpen, setMobileMenuOpen, theme, toggleTheme }) => {
     const { t, language, setLanguage } = useLanguage();
     const [showNote, setShowNote] = useState(false);
     const [noteContent, setNoteContent] = useState(localStorage.getItem('quickNotes') || '');
+    const [searchQuery, setSearchQuery] = useState('');
     const noteRef = useRef(null);
 
     // Click outside to close Note
@@ -37,7 +38,7 @@ const Navigation = ({ activeTab, setActiveTab, mobileMenuOpen, setMobileMenuOpen
                 <div className="flex justify-between items-center h-16">
                     <div className="flex items-center cursor-pointer group" onClick={() => setActiveTab('home')}>
                         <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold text-xl mr-2 transition-transform group-hover:rotate-12">
-                            D
+                            H
                         </div>
                         <span className={`font-bold text-xl group-hover:text-emerald-600 transition-colors ${theme === 'light' ? 'text-slate-800' : 'text-slate-200'}`}>Dev<span className="text-emerald-600">Profile</span></span>
                     </div>
@@ -57,6 +58,18 @@ const Navigation = ({ activeTab, setActiveTab, mobileMenuOpen, setMobileMenuOpen
                         ))}
 
                         <div className="flex items-center space-x-2 border-l pl-4 border-slate-300 dark:border-slate-700">
+                            {/* Search Bar */}
+                            <div className={`relative flex items-center rounded-full px-3 py-1.5 transition-colors border ${theme === 'light' ? 'bg-slate-100 border-slate-200 focus-within:bg-white focus-within:border-emerald-500' : 'bg-slate-800 border-slate-700 focus-within:bg-slate-800 focus-within:border-emerald-500'}`}>
+                                <Search size={16} className={theme === 'light' ? 'text-slate-400' : 'text-slate-500'} />
+                                <input
+                                    type="text"
+                                    placeholder={language === 'vi' ? "Tìm kiếm..." : "Search..."}
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    className={`ml-2 w-24 focus:w-48 transition-all duration-300 bg-transparent outline-none text-sm ${theme === 'light' ? 'text-slate-600 placeholder-slate-400' : 'text-slate-200 placeholder-slate-500'}`}
+                                />
+                            </div>
+
                             {/* Note Button */}
                             <div className="relative" ref={noteRef}>
                                 <button

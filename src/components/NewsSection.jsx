@@ -4,8 +4,9 @@ import { Calendar, Tag, ArrowRight, Newspaper, Search } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll.jsx';
 import { useLanguage } from '../contexts/LanguageContext.jsx';
 
-// Dữ liệu tin tức (Giữ nguyên)
+// Dữ liệu tin tức ()
 const NEWS_DATA = [
+    // --- Dữ liệu cũ ---
     {
         id: 1,
         date: "2024-03-20",
@@ -47,9 +48,51 @@ const NEWS_DATA = [
             vi: "Tổng hợp các kỹ thuật sử dụng useMemo và useCallback hiệu quả để tránh render thừa trong ứng dụng lớn.",
             en: "A collection of techniques for effectively using useMemo and useCallback to avoid unnecessary renders in large apps."
         }
+    },
+    // --- Dữ liệu mới thêm vào ---
+    {
+        id: 4,
+        date: "2025-11-20", // Cập nhật ngày mới nhất
+        category: "Promotion",
+        image: "https://images.unsplash.com/photo-1696429175928-793a1cdef1d3?q=80&w=800&auto=format&fit=crop", // Ảnh minh họa ChatGPT/AI
+        title: {
+            vi: "Hướng dẫn đăng ký gói ChatGPT GO miễn phí 1 năm",
+            en: "Guide to Register for 1-Year Free ChatGPT GO"
+        },
+        summary: {
+            vi: "Yêu cầu tài khoản mới chưa từng đăng ký, sử dụng Android và thanh toán qua MoMo hoặc ShopeePay.",
+            en: "Requires a new account, Android device usage, and payment via MoMo or ShopeePay."
+        }
+    },
+    {
+        id: 5,
+        date: "2025-11-19",
+        category: "Education",
+        image: "https://images.unsplash.com/photo-1633419461186-7d40a2e50e80?q=80&w=800&auto=format&fit=crop", // Ảnh minh họa Microsoft
+        title: {
+            vi: "Nhận bản quyền Microsoft Office 365 miễn phí 1 năm",
+            en: "Get Microsoft Office 365 Free for 1 Year"
+        },
+        summary: {
+            vi: "Chương trình hỗ trợ AI for Students. Đăng ký thông qua đường link chính thức của Microsoft Copilot.",
+            en: "AI for Students program support. Register via the official Microsoft Copilot link."
+        }
+    },
+    {
+        id: 6,
+        date: "2025-11-18",
+        category: "Promotion",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop", // Ảnh minh họa AI/Gemini
+        title: {
+            vi: "Cơ hội sở hữu Gemini Pro 18 tháng",
+            en: "Opportunity to Own Gemini Pro for 18 Months"
+        },
+        summary: {
+            vi: "Áp dụng cho tài khoản chưa từng nâng cấp lên bản Pro, thanh toán dễ dàng qua ví MoMo hoặc ShopeePay.",
+            en: "Applicable for accounts that have never upgraded to Pro, easy payment via MoMo or ShopeePay."
+        }
     }
 ];
-
 const NewsSection = () => {
     const { t, language } = useLanguage();
     const [filter, setFilter] = useState('All');
@@ -90,8 +133,8 @@ const NewsSection = () => {
                                 key={cat}
                                 onClick={() => setFilter(cat)}
                                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${filter === cat
-                                        ? 'bg-emerald-600 text-white shadow-md transform -translate-y-1'
-                                        : 'bg-white text-slate-600 hover:bg-emerald-50 border border-slate-200'
+                                    ? 'bg-emerald-600 text-white shadow-md transform -translate-y-1'
+                                    : 'bg-white text-slate-600 hover:bg-emerald-50 border border-slate-200'
                                     }`}
                             >
                                 {cat}

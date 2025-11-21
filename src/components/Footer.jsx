@@ -30,7 +30,7 @@ const Footer = ({ setActiveTab }) => {
                 <div>
                     <h4 className="text-white font-bold mb-4">{t('footer.connect')}</h4>
                     <div className="flex gap-4">
-                        <a href="#" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-all"><Github size={20} /></a>
+                        <a href="https://github.com/NguyenHuuHung-Dev" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-all"><Github size={20} /></a>
                         <a href="#" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-all"><Linkedin size={20} /></a>
                         <a href="#" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-all"><Mail size={20} /></a>
                     </div>

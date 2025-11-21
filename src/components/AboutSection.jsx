@@ -8,22 +8,26 @@ const SKILLS = [
     { name: "React/Next.js", level: 85 },
     { name: "Node.js", level: 80 },
     { name: "SQL/NoSQL", level: 75 },
-    { name: "Docker/AWS", level: 60 },
+    { name: "Docker/AWS", level: 40 },
+    { name: "C#/ASP.NET", level: 90 },
+    { name: "python", level: 60 },
+    { name: "Java", level: 60 },
+    { name: "Vibe coding", level: 95 },
 ];
 
 // Dữ liệu mẫu cho Thành tích
 const ACHIEVEMENTS = [
-    { year: "2024", title: { vi: "Giải Nhất Hackathon TechDev", en: "1st Place TechDev Hackathon" }, org: "Vietnam Tech Association" },
-    { year: "2023", title: { vi: "Chứng chỉ AWS Solutions Architect", en: "AWS Solutions Architect Certified" }, org: "Amazon Web Services" },
-    { year: "2024& 2025", title: { vi: "Sinh viên Xuất sắc", en: "Excellent Student Award" }, org: "University of Technology" },
+    { year: "2024", title: { vi: " Chuyên gia Chứng nhận Kali Linux", en: "Kali Linux Certified Professional (KLCP)" }, org: "Offensive Security" },
+    { year: "2024", title: { vi: "Chứng chỉ AWS Solutions Architect", en: "AWS Solutions Architect Certified" }, org: "Amazon Web Services" },
+    { year: "2024& 2025", title: { vi: "Sinh viên Xuất sắc", en: "Excellent Student Award" }, org: " University of Technology and Education - The University of Da Nang" },
 ];
 
 // Dữ liệu mẫu cho Sở thích
 const HOBBIES = [
     { icon: Book, label: { vi: "Đọc sách công nghệ", en: "Tech Reading" } },
-    { icon: Plane, label: { vi: "Du lịch khám phá", en: "Traveling" } },
+    { icon: Plane, label: { vi: "Cầu lông", en: "Badminton" } },
     { icon: Gamepad2, label: { vi: "Chơi Game chiến thuật", en: "Strategy Games" } },
-    { icon: Coffee, label: { vi: "Thưởng thức Cà phê", en: "Coffee Tasting" } },
+    { icon: Coffee, label: { vi: "Thưởng thức Trà", en: "Tea Tasting" } },
 ];
 
 const AboutSection = () => {
