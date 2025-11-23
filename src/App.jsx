@@ -3,13 +3,15 @@ import { Code, Server, Database, Layout, Terminal, Globe } from 'lucide-react';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext.jsx';
 
 import Navigation from './components/Navigation.jsx';
-// Import Named Export (phải có ngoặc nhọn nếu file HeroSection export const)
 import { HeroSection } from './components/HeroSection.jsx';
 import AboutSection from './components/AboutSection.jsx';
 import ProjectsSection from './components/ProjectsSection.jsx';
 import ContactSection from './components/ContactSection.jsx';
 import Footer from './components/Footer.jsx';
 import NewsSection from './components/NewsSection.jsx';
+
+// 1. IMPORT CHAT WIDGET Ở ĐÂY
+import GeminiChatWidget from './components/GeminiChatWidget.jsx';
 
 // Component TechStackMarquee (Giữ nguyên)
 const TechStackMarquee = () => (
@@ -91,6 +93,9 @@ const AppContent = () => {
       </main>
 
       <Footer setActiveTab={setActiveTab} />
+
+      {/* 2. ĐẶT WIDGET Ở CUỐI CÙNG ĐỂ NÓ LUÔN HIỆN TRÊN MỌI TRANG */}
+      <GeminiChatWidget />
 
       {/* CSS Global inline */}
       <style>{`

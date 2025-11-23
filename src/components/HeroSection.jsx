@@ -3,8 +3,6 @@ import { ChevronRight, Code, Cpu } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import profilePic from '../assets/images/profile.jpeg';
 
-// --- SỬA DÒNG NÀY ---
-// Thêm chữ "export" vào trước const để thành Named Export
 export const HeroSection = ({ setActiveTab }) => {
     const { t } = useLanguage();
     const [text, setText] = useState('');
@@ -110,6 +108,7 @@ export const HeroSection = ({ setActiveTab }) => {
                     </div>
                 </div>
             </div>
+
         </div>
     );
 };
