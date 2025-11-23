@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Environment variables (QUAN TRỌNG: Chặn file chứa API Key)
+.env
+.env.*
+!.env.example

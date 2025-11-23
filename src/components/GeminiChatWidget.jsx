@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { MessageSquare, X, Send, Loader2, Bot, Image as ImageIcon, Sparkles } from 'lucide-react';
 
 // --- CẤU HÌNH API GEMINI ---
-const GEMINI_API_KEY = 'AIzaSyAi-0pFhWR_bB1alNqbCMSGVrPlk1UpkLA'; // Dán lại Key của bạn vào đây
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 // --- HƯỚNG DẪN MỚI (QUAN TRỌNG) ---
