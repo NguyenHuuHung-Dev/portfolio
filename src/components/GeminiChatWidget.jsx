@@ -109,47 +109,83 @@ const GeminiChatWidget = () => {
         if (fileInputRef.current) fileInputRef.current.value = '';
     };
 
-    // --- GỬI TIN NHẮN ---
+    // --- GỬI TIN NHẮN (ĐÃ CẬP NHẬT MEMORY) ---
     const handleSend = async () => {
         if ((!input.trim() && !image) || isLoading) return;
 
         const timestamp = Date.now();
+        // 1. Tạo tin nhắn người dùng mới
         const userMessage = {
             id: timestamp,
             role: 'user',
             text: input,
-            image: image?.preview
+            image: image?.preview // Chỉ dùng để hiển thị UI
         };
 
+        // Cập nhật UI ngay lập tức
         setMessages(prev => [...prev, userMessage]);
-        setInput('');
+
+        // Lưu lại giá trị hiện tại để xử lý API
+        const currentInput = input;
         const currentImage = image;
+
+        setInput('');
         setImage(null);
         setIsLoading(true);
 
         try {
-            const parts = [];
-            // Luôn gửi kèm hướng dẫn hệ thống để AI không "quên bài"
-            parts.push({ text: SYSTEM_INSTRUCTION });
+            // 2. CHUẨN BỊ LỊCH SỬ CHAT (CONTEXT)
+            // Lọc bỏ tin nhắn chào mừng (id 1, 2) và tin nhắn lỗi
+            // Chỉ lấy tin nhắn thực tế giữa user và model
+            const history = messages
+                .filter(msg => msg.id !== 1 && msg.id !== 2 && !msg.text.startsWith('Lỗi:'))
+                .map(msg => ({
+                    role: msg.role,
+                    parts: [{ text: msg.text }]
+                    // Lưu ý: Để tiết kiệm token và bandwidth, ta thường chỉ gửi text của lịch sử.
+                    // Nếu muốn gửi cả ảnh cũ, cần giữ base64 của ảnh cũ, nhưng sẽ rất nặng.
+                }));
 
-            if (input.trim()) parts.push({ text: input });
+            // 3. CHUẨN BỊ TIN NHẮN HIỆN TẠI
+            const currentParts = [];
+            if (currentInput.trim()) currentParts.push({ text: currentInput });
 
+            // Nếu tin nhắn hiện tại có ảnh, thêm vào
             if (currentImage) {
-                parts.push({
+                currentParts.push({
                     inlineData: { mimeType: currentImage.file.type, data: currentImage.base64 }
                 });
             }
 
+            // 4. GỘP LỊCH SỬ + TIN NHẮN HIỆN TẠI
+            const contents = [
+                ...history,
+                { role: 'user', parts: currentParts }
+            ];
+
+            // 5. GỌI API
             const response = await fetch(GEMINI_API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ contents: [{ parts: parts }] })
+                body: JSON.stringify({
+                    // Sử dụng systemInstruction riêng biệt để định hình tính cách tốt nhất
+                    systemInstruction: {
+                        parts: [{ text: SYSTEM_INSTRUCTION }]
+                    },
+                    contents: contents, // Gửi toàn bộ lịch sử
+                    generationConfig: {
+                        temperature: 1, // Độ sáng tạo (Zing hay quạo thì nên để cao chút)
+                        maxOutputTokens: 1000,
+                    }
+                })
             });
 
             const data = await response.json();
             if (!response.ok) throw new Error(data.error?.message || "Lỗi API");
 
             const botResponseText = data.candidates[0].content.parts[0].text;
+
+            // Cập nhật câu trả lời vào UI
             setMessages(prev => [...prev, { id: timestamp + 1, role: 'model', text: botResponseText }]);
 
         } catch (error) {
