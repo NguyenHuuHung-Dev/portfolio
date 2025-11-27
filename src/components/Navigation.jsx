@@ -126,7 +126,7 @@ const Navigation = ({ activeTab, setActiveTab, mobileMenuOpen, setMobileMenuOpen
                                 <div className="relative" ref={noteRef}>
                                     <button onClick={() => setShowNote(!showNote)} className={`p-2 rounded-full transition-colors relative ${theme === 'light' ? 'text-slate-500 hover:bg-slate-200' : 'text-slate-400 hover:bg-slate-700'}`}>
                                         <FileText size={20} />
-                                        {!showNote && <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-white-500 rounded-full animate-pulse border border-white dark:border-slate-900"></span>}
+                                        {!showNote && <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-whit-500 rounded-full animate-pulse border border-white dark:border-slate-900"></span>}
                                     </button>
                                     {showNote && (
                                         <div className={`absolute right-0 mt-4 w-80 p-5 rounded-2xl shadow-2xl border transform transition-all z-50 ${theme === 'light' ? 'bg-white border-slate-100 text-slate-800' : 'bg-slate-800 border-slate-700 text-white'}`}>
